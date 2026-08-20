@@ -1,6 +1,7 @@
 export type MessageType = 'email' | 'sms' | 'webhook' | 'notification';
 export type MessageDirection = 'outbound' | 'inbound_test';
 export type MessageStatus = 'intercepted' | 'simulated_delivered' | 'simulated_failed' | 'blocked' | 'quarantined' | 'reviewed' | 'expired';
+export type MessageFilter = 'all' | 'email' | 'sms' | 'webhook' | 'delivered' | 'failed' | 'blocked';
 export type DeliverySimulation = 'intercept_only' | 'simulate_delivered' | 'simulate_failed';
 export type EventType = 'captured' | 'blocked' | 'simulated_delivered' | 'simulated_failed' | 'opened_in_test_mailbox' | 'attachment_downloaded' | 'linked_to_test_case' | 'linked_to_feedback' | 'quarantined' | 'expired';
 

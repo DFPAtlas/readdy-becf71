@@ -38,16 +38,16 @@ export function useGateState({ publicPaths, loginPath, verifyAccess }: GateState
     let isPublic = false;
 
     if (currentPath) {
-      isPublic = pub && pub.some(
+      isPublic = Boolean(pub?.some(
         (p) => currentPath === p || currentPath.endsWith(p)
-      );
+      ));
     }
 
     if (!isPublic && typeof window !== 'undefined') {
       const browserPath = window.location.pathname;
-      isPublic = pub && pub.some(
+      isPublic = Boolean(pub?.some(
         (p) => browserPath === p || browserPath.endsWith(p)
-      );
+      ));
     }
 
     if (isPublic) {
